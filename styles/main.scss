@@ -1,0 +1,326 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,700;1,800;1,900&family=Roboto:wght@100;300;400;500;700&display=swap');
+
+html {
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.15;
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  }
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    background: linear-gradient(to top, rgba(255, 216, 216, 0.936), rgba(247, 187, 187, 0.753), rgba(255, 219, 219, 0.432));
+}
+
+h1,h2,h3,h4,h5 {
+    line-height: 1;
+}
+
+h1 {
+    font-size: 2.5rem;
+
+    @media  screen and (max-width: 1024px) {
+        font-size: 2.2rem;
+    }
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 500;
+    @media  screen and (max-width: 1024px) {
+        font-size: 1.7rem;
+    }
+}
+
+h3 {
+   font-size: 1.6rem; 
+   font-weight: 600;
+   @media  screen and (max-width: 1024px) {
+    font-size: 1.4rem;
+}
+}
+
+h4 {
+    font-size: 1.4rem;
+    font-weight: 500;
+
+    @media  screen and (max-width: 1024px) {
+        font-size: 1.2rem;
+    }
+}
+
+p{
+    font-size: 1.25rem;
+    font-weight: lighter;
+}
+
+a {
+    color: rgba(0, 0, 0, 0.646);
+    cursor: pointer;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+
+    outline: none;
+    box-sizing: border-box;
+
+    text-decoration: none;
+    list-style: none;
+
+}
+
+.d-flex-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+ 
+}
+
+.d-flex-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+}
+
+.df-flex-wrap {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.df-align-center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.center-align {
+    align-items: center;
+    text-align: center;
+}
+
+.w-80{
+    width: 80%;
+
+    @media screen and (max-width: 688px){
+        width: 96%;
+     }
+    
+}
+
+.w-72 {
+    width: 72%;
+}
+
+.w-88{
+    width: 88%;
+}
+
+.w-96{
+    width: 96%;
+}
+
+button {
+    background-color: transparent;
+    border: 1px solid rgb(101, 101, 101);
+    padding: .9rem .3rem;
+    width: 72%;
+    height: 5.5vh;
+    border-radius: 9.3px;
+    align-items: center;
+
+    a{
+        text-align: center;
+        align-items: center;
+        gap: 1rem;
+        width: 96%;
+        img {
+            width: 28px;
+            height: 28px;
+            object-fit: contain;
+        }
+    }
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+.button.call {
+    a{
+        color: rgb(28, 28, 27);
+    }
+}
+
+.account-holder {
+    border: 1px solid rgba(101, 101, 101, 0.384);
+    border-radius: 3px;
+  
+    gap: 1rem;
+    position: relative;
+    overflow: hidden;
+    height: 0;
+    opacity: 0;
+    transition: all 400ms ease;
+}
+
+.active {
+    height: auto;
+    opacity: 1;
+    transition: all 400ms ease;
+    padding: 1rem 2rem;
+}
+
+
+.header {
+    cursor: pointer;
+    width: 96%;
+    padding: .4rem .08rem;
+    border-radius: 3px;
+    gap: 1rem;
+    box-shadow: 0 1px 6px rgba(0, 0, 0, 0.201);
+
+    img {
+        opacity: 0.5;
+        width: 28px;
+        height: 28px;
+    }
+}
+
+.account-holder {
+    gap: .8rem;
+}
+
+// MAIN PAGE STYLING STARTS HERE
+.main-app {
+    background-color: rgba(255, 255, 255, 0.587);
+    border-radius: 20px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 6px 6px rgba(0, 0, 0, 0.23);
+    padding: 1rem 0;
+ width: 64%;
+ height: 100%;
+ margin: 0 auto;
+
+ @media screen and (max-width: 688px){
+    width: 96%;
+ }
+
+ .app-container {
+
+    position: relative;
+    overflow: hidden;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.183);
+    width: 64%;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.224);;
+    border-radius: 18px;
+    gap: .6rem;
+
+    transition: all 400ms ease;
+
+    @media screen and (max-width: 688px){
+        width: 96%;
+        padding: 1.2rem .5rem;
+     }
+    
+ }
+
+
+
+ @keyframes gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+ .top {
+    position: relative;
+    gap: .7rem;
+    margin-bottom: 32px;
+    
+
+    .img-holder {
+        border-radius: 50%;
+        overflow: hidden;
+        width: 32%;
+      
+
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        @media screen and (max-width: 688px){
+            width: 40%;
+         }
+        
+    }
+
+    .client-intro {
+      gap: 1rem;
+
+      .office-intro {
+        gap: .3rem;
+
+        .dot-sm{
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background-color: rgba(188, 188, 188, 0.66);
+        }
+
+        .office{
+            font-size: 15px;
+            font-weight: 200;
+        }
+
+        .profession {
+            font-size: 17px;
+            font-weight: 300;
+        }
+
+        .button {
+            a p{
+                color: black;
+            }
+        }
+      }
+    }
+ }
+
+ .middle {
+    position: relative;
+    gap: .4rem;
+    margin-bottom: 1px;
+    background-color: transparent;
+
+ }
+
+ .bottom {
+    gap: .4rem;
+ }
+
+
+}
