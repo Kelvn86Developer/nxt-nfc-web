@@ -1,8 +1,7 @@
 import { sanityClient, urlFor, usePreviewSubscription } from "../../lib/sanity";
-import { PortableText } from "@portabletext/react";
 import Head from "next/head";
-import {Link} from "next/link";
 import react, {useState} from 'react';
+import { useRouter } from "next/router";
 
 const userQuery = `*[_type=="self" && slug.current == $slug][0]{
     slug,
@@ -10,7 +9,11 @@ const userQuery = `*[_type=="self" && slug.current == $slug][0]{
     userName->{_id,fname, userWhatsapp, userTwitter, userInstagram,profile, pNo, profession}
   }`;
 
-export default function OneUser({data}) {
+export default function OneUser({ data }) {
+  const router = useRouter();
+  if(!data){
+    return <div>...loading</div>
+  }
    const { user } = data;
    const {slug, userName, officeName } = user;
    const [show, setShow] = useState(false);
@@ -40,7 +43,6 @@ export default function OneUser({data}) {
                  </div>
                  <button className="button call d-flex-row">
                    <a href={"tel:"+userName.pNo} className="d-flex-row">
-                     {/* <img src="../assets/icons/phone.png" alt="" className="icon" /> */}
                      <i className="bi bi-telephone-fill icon"></i>
                      <p>{userName.pNo}</p>
                    </a>
@@ -128,10 +130,10 @@ export async function getStaticPaths(){
     }
 }
 
-export async function getStaticProps({params}){
+export async function getStaticProps({ params }){
 const { slug } = params;
 
-const user = await sanityClient.fetch(userQuery, {slug});
+const user = await sanityClient.fetch(userQuery, { slug });
 
 return {
     props: { data: { user}}
